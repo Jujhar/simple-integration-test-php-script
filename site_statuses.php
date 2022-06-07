@@ -1,5 +1,22 @@
 <?php 
-// To use just change `$site` variable (line 11) and second param of `strpos` function (line 13) of each site you want to test.
+// To use just change `$site` variable (line 28) and second param of `strpos` function (line 30) of each site you want to test.
+//
+// OUTPUTS SOMETHING LIKE THIS ON VISITING PAGE
+//
+// starting...
+// passed..
+// passed..
+// passed..
+// passed..
+// passed..
+// passed..
+// passed..
+// passed..
+// passed..
+//
+// 100%
+// done
+
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -10,7 +27,7 @@ $errors = 0;
    
 $site = "https://SITE-1.COM/PAGE55.HTML";
 $content = file_get_contents($site);
-if (strpos(strval($content), 'TITLE THAT SHOULD BE PRESENT ON PAGE') !== false) {
+if (strpos(strval($content), 'ANY STRING THAT SHOULD BE PRESENT ON PAGE') !== false) {
    echo "<br><span style='color:green;'>passed..</span>";
 } else {
    echo "<br>failed";
